@@ -28,7 +28,7 @@
           <p>You know you want to.</p>
         </div>
 
-        <form id="my-form">
+        <form id="form">
           <h2>Let's do this!</h2>
 
           <div>
@@ -58,28 +58,29 @@
           <div>
             <div class="password">
               <label for="password">Password</label>
-              <input type="password" name="password" id="password" />
-              <p class="password-alert">*Passwords don't match</p>
-              <div class="message">
-                <h3>Password must contain the following</h3>
-                <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-                <p id="capital" class="invalid">A <b>capital(uppercase)</b> letter</p>
-                <p id="number" class="invalid">A <b>Minimum<b> 8 characters</p>
+              <input
+                type="password"
+                name="password1"
+                id="password1"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              />
+              <!-- <p class="password-alert">*Passwords don't match</p> -->
+              <!-- Error/Success Message -->
+              <div class="message-container">
+                <h3 id="message">Password Confirmation</h3>
               </div>
-
-              
-
             </div>
-
             <div class="confirm">
               <label for="confirm">Confirm Password</label>
-              <input type="password" name="confirm" id="confirm" />
+              <input type="password" name="password2" id="password2" />
             </div>
           </div>
         </form>
-        <div class="form-end">
+        <div class="form">
           <div class="button">
-            <button id="button" type="submit" form="my-form">Create Account</button>
+            <button id="button" type="submit" form="my-form">
+              Create Account
+            </button>
             <p>Already have an Account ? <span>Log in</span></p>
           </div>
         </div>
